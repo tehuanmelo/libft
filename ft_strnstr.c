@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 14:27:48 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/18 18:22:33 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/18 23:45:56 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,26 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+// size_t check(char *haystack, char *needle, size_t len)
+// {
+// 	size_t i;
+// 	size_t match;
+
+// 	i = 0;
+// 	while (needle[i] && i < len)
+// 	{
+// 		if (needle[i] == haystack[i])
+// 			match++;
+// 		i++;
+// 	}
+// 	return (match);
+// }
+
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	size_t	match;
+	size_t i;
+	size_t j;
+	size_t match;
 
 	if (!*needle)
 		return ((char *)haystack);
@@ -39,6 +54,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		match = 0;
 		if (*haystack == *needle)
 		{
+			// match = check(haystack, needle, len - i);
 			while (needle[j] && j < len - i)
 			{
 				if (needle[j] == haystack[j])
@@ -60,7 +76,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // 	char needle[10] = "cd";
 // 	char * empty = (char*)"";
 // 	printf("%s\n", ft_strnstr(haystack, "cd", 8));
-
-
 
 // }
