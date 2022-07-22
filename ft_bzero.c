@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 // DESCRIPTION
-//      The ft_bzero() function writes n zeroed bytes to the string s. 
+//      The ft_bzero() function writes n zeroed bytes to the string s.
 //      If n is zero, bzero() does nothing.
-
 
 #include "libft.h"
 

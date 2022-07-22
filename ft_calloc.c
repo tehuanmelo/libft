@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 22:17:25 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/19 12:51:41 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:02:13 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@
 
 #include "libft.h"
 
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    void *new;
+	void	*new;
 
-    if (count > SIZE_MAX/size || size <= 0)
-        return (NULL);
-    new = malloc(count * size);
-    if (!new)
-        return (NULL);
-    ft_bzero(new, count);
-    return (new);
+	if (count > SIZE_MAX / size)
+		return (NULL);
+	new = malloc(count * size);
+	if (!new)
+		return (NULL);
+	ft_bzero(new, count * size);
+	return (new);
 }

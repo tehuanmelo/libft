@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 09:54:52 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/18 17:07:34 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:13:29 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	dstlen;
 	size_t	srclen;
-	size_t	totallen;
 
 	srclen = ft_strlen(src);
 	dstlen = ft_strlen(dst);
@@ -68,16 +67,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	*dst = 0;
 	return (srclen + dstlen);
 }
-
-// int main()
-// {
-// 	char dest[30]; memset(dest, 'B', 4);
-// 	char * src = (char *)"AAAAAAAAA";
-// 	printf("%zu, %s\n", ft_strlcat(dest, src, 3), dest);
-
-// 	char dest2[30]; memset(dest, 'B', 4);
-// 	char * src2 = (char *)"AAAAAAAAA";
-// 	printf("%zu, %s\n", strlcat(dest2, src2, 3), dest2);
-	
-
-// }

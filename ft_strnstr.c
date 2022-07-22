@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 14:27:48 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/19 11:59:23 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/22 15:09:54 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,38 +24,22 @@
 
 #include "libft.h"
 
-// size_t check(char *haystack, char *needle, size_t len)
-// {
-// 	size_t i;
-// 	size_t match;
-
-// 	i = 0;
-// 	while (needle[i] && i < len)
-// 	{
-// 		if (needle[i] == haystack[i])
-// 			match++;
-// 		i++;
-// 	}
-// 	return (match);
-// }
-
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	size_t j;
-	size_t match;
+	size_t	i;
+	size_t	j;
+	size_t	match;
 
 	if (!*needle)
 		return ((char *)haystack);
 	i = 0;
-	while (*haystack && i < len)
+	while (*haystack && len--)
 	{
 		j = 0;
 		match = 0;
 		if (*haystack == *needle)
 		{
-			// match = check(haystack, needle, len - i);
-			while (needle[j] && j < len - i)
+			while (needle[j] && j < len + 1) // +1 to keep 25 lines
 			{
 				if (needle[j] == haystack[j])
 					match++;
@@ -65,16 +49,14 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 				return ((char *)haystack);
 		}
 		haystack++;
-		i++;
 	}
 	return (NULL);
 }
 
-// int main()
+// int	main(void)
 // {
 // 	char haystack[30] = "aaabcabcd";
 // 	char needle[10] = "cd";
-// 	char * empty = (char*)"";
+// 	char *empty = (char *)"";
 // 	printf("%s\n", ft_strnstr(haystack, "cd", 8));
-
 // }

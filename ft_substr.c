@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 15:03:36 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/19 18:20:45 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:07:31 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // len: 
 //     The maximum length of the substring.
 // Return value
-//      The substring.
+//     The substring.
 //     NULL if the allocation fails.
 // External functs. 
 //     malloc
@@ -28,7 +28,6 @@
 //     maximum size ’len’.
 
 #include "libft.h"
-#include <stdio.h>
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -37,11 +36,11 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
     if (!s)
         return (NULL);
-    if (len > strlen(s))
-        len = strlen(s);
+    if (len > ft_strlen(s))
+        len = ft_strlen(s);
     if (start >= strlen(s))
         len = 0;
-    substr = (char *)malloc((len + 1) * sizeof(char));
+    substr = malloc((len + 1) * sizeof(char));
     if(!substr)
         return (NULL);
     i = 0;

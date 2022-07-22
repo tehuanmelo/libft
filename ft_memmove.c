@@ -6,12 +6,12 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 15:31:57 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/15 14:07:51 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:47:31 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // DESCRIPTION
-//      The ft_memmove() function copies len bytes from string src to 
+//      The ft_memmove() function copies len bytes from string src to
 //		string dst.
 //      The two strings may overlap;
 //      the copy is always done in a non-destructive manner.
@@ -23,19 +23,24 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
-	char	tmp[255];
 
 	i = 0;
-	while (i < len)
+	if (!(dst || src))
+		return (dst);
+	if (dst <= src)
 	{
-		tmp[i] = ((unsigned char *)src)[i];
-		i++;
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		((unsigned char *)dst)[i] = tmp[i];
-		i++;
+		while (len--)
+		{
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+		}
 	}
 	return (dst);
 }

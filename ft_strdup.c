@@ -25,16 +25,16 @@
 
 #include "libft.h"
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-    char *new;
-    int i;
+	char	*new;
+	int		i;
 
-    new = ft_calloc((ft_strlen(s1) + 1), sizeof(char));
-    if (!new)   
-        return (0);
-    i = 0;
-    while (*s1)
-        new[i++] = *s1++;
-    return (new);
+	new = ft_calloc((ft_strlen(s1) + 1), sizeof(char));
+	if (!new)
+		return (0);
+	i = 0;
+	while (*s1)
+		new[i++] = *s1++;
+	return (new);
 }
