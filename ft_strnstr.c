@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 14:27:48 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/18 23:45:56 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2022/07/21 00:30:54 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,6 @@
 //      first character of the first occurrence of needle is returned.
 
 #include "libft.h"
-
-// size_t check(char *haystack, char *needle, size_t len)
-// {
-// 	size_t i;
-// 	size_t match;
-
-// 	i = 0;
-// 	while (needle[i] && i < len)
-// 	{
-// 		if (needle[i] == haystack[i])
-// 			match++;
-// 		i++;
-// 	}
-// 	return (match);
-// }
 
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:18:59 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/19 08:54:02 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2022/07/21 00:38:56 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 int	    ft_isalnum(int c);
 int	    ft_isalpha(int c);
@@ -43,5 +44,6 @@ int     ft_memcmp(const void *s1, const void *s2, size_t n);
 int     ft_atoi(const char *str);
 void    *ft_calloc(size_t count, size_t size);
 char    *ft_strdup(const char *s1);
+char *ft_itoa(int n);
 
 #endif

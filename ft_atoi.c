@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:47:42 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/18 22:12:18 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2022/07/22 11:36:46 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@
 
  int    ft_atoi(const char *str)
  {
-    int res;
+    long long res;
     int sign;
-    char *s;
 
     res = 0;
     sign = 1;
-    while (*str == 32 || *str >= 9 && *str <= 13)
+    while (*str == 32 || (*str >= 9 && *str <= 13))
         str++;
     if (*str == '+' || *str == '-')
     {
@@ -37,8 +36,26 @@
     }
     while (*str >= '0' && *str <= '9')
     {
+        
+        if (sign == -1 && res * sign <= LLONG_MIN/10)
+            return (0);
+        if (res >= LLONG_MAX/10)
+            return (-1);
         res = res * 10 + *str - '0';
         str++;
     }
     return (res * sign);
  }
+
+//  int main()
+//  {
+//     printf("%d\n", ft_atoi("    9223372036854775807   "));
+//     printf("%d\n", atoi("    9223372036854775807   "));
+//     printf("%d\n", ft_atoi("	-9223372036854775808  "));
+//     printf("%d\n", atoi("	-9223372036854775808    "));
+//     printf("%d\n", ft_atoi("-+42"));
+//     printf("%d\n", atoi("-+42"));
+//     printf("%d\n", ft_atoi("--1"));
+//     printf("%d\n", atoi("--1"));
+   
+//  }
