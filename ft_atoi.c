@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:59:22 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/22 13:37:35 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/22 15:22:31 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,4 @@ int	ft_atoi(const char *str)
 //     printf("%d\n", atoi("-+42"));
 //     printf("%d\n", ft_atoi("--1"));
 //     printf("%d\n", atoi("--1"));
-
 //  }
