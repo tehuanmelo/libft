@@ -1,95 +1,93 @@
-// Assignment name  : ft_split
-// Expected files   : ft_split.c
-// Allowed functions: malloc
-// --------------------------------------------------------------------------------
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/24 23:20:42 by tehuanmelo        #+#    #+#             */
+/*   Updated: 2022/07/25 02:23:33 by tehuanmelo       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Write a function that takes a string, splits it into words, and returns them as
-// a NULL-terminated array of strings.
+#include "libft.h"
 
-// A "word" is defined as a part of a string delimited either by spaces/tabs/new
-// lines, or by the start/end of the string.
-
-// Your function must be declared as follows:
-
-// char    **ft_split(char *str);
-
-#include <stdio.h>
-#include <stdlib.h>
-
-int ft_words(char *str)
+int ft_words(char const *s, char c)
 {
-    int count = 0;
-    while (*str)
+    int counter;
+
+    counter = 0;
+    while (*s)
     {
-        while (*str == 32 || (*str >= 9 && *str <= 13))
-            str++;
-        if (*str)
-            count++;
-        while (*str && !(*str == 32 || (*str >= 9 && *str <= 13)))
-            str++;
+        if ((*s == c && (*(s - 1)) != c) 
+        || (*s != c && (*(s + 1)) == 0))
+            counter++;
+        s++;
     }
-    return count;
+    return (counter);
 }
 
-int ft_wordlen(char *str)
+int ft_strlensplt(char const *s, char c)
 {
-    int count = 0;
-    while (*str && !(*str == ' ' || (*str >= 9 && *str <= 13)))
+    int counter;
+
+    counter = 0;
+    while (*s)
     {
-        count++;
-        str++;
+        if ((*s == c && (*(s - 1)) != c) 
+        || (*s != c && (*(s + 1)) == 0) 
+        || (*s != c && (*(s + 1)) == c))
+        {
+            counter++;
+            return (counter);
+        }
+        counter++;
+        s++;
     }
-    return count;
+    return (counter);
 }
 
-char **ft_split(char *str)
+char **ft_split(char const *s, char c)
 {
     char **new;
-    int i = 0, j = 0, wlen;
-    int len = ft_words(str);
+    int strwords;
+    int wlen;
+    int i;
+    int j;
 
-    new = malloc(sizeof(char *) * (len + 1));
-    if (!new)
-        return NULL;
-
-    while (i < len)
+    strwords = ft_words(s, c);
+    if (!s)
+        return (NULL);
+    if (!(new = ft_calloc(ft_words(s, c) + 1, (sizeof(char *)))))
+        return (NULL);
+    i = 0;
+    while (i < strwords)
     {
-
-        while (*str == 32 || (*str >= 9 && *str <= 13))
-            str++;
-
-        wlen = ft_wordlen(str);
-        j = 0;
-
-        new[i] = malloc(sizeof(char) * wlen + 1);
-        if (!new[i])
-            return NULL;
-
-        while (j < wlen)
+        while (*s == c)
+            s++;
+        wlen = ft_strlensplt(s, c);
+        if (!(new[i] = ft_calloc(wlen + 1, (sizeof(char)))))
         {
-            new[i][j] = *str;
-            str++;
-            j++;
+            return (NULL);
+            free(new);
         }
-
-        new[i][j] = '\0';
-        i++;
+        j = 0;
+        while (j < wlen)
+            new[i][j++] = *s++;
+        i++; 
     }
-
-    new[i] = 0;
-
-    return new;
+    return (new);
 }
 
 // int main(int ac, char **av)
 // {
 //     (void)ac;
-//     char **new = ft_split(av[1]);
+//     char **new = ft_split(av[1], ',');
 //     while(*new)
 //     {
 //         printf("%s\n", *new);
 //         new++;
 //     }
 
-//     return 0;
+//     return (0);
 // }

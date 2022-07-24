@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:18:59 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/22 15:21:15 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/24 23:23:52 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <string.h>
 #include <limits.h>
 #include <stddef.h>
+#include <unistd.h>
 
 int	    ft_isalnum(int c);
 int	    ft_isalpha(int c);
@@ -49,5 +50,10 @@ char    *ft_strdup(const char *s1);
 char    *ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
 char    *ft_strtrim(char const *s1, char const *set);
+char    **ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+
+// My implementation //
+int	ft_intlen(int n);
 
 #endif
