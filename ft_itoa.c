@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 22:47:48 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/24 02:44:47 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2022/07/25 13:17:17 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ char	*ft_itoa(int n)
 {
 	char		*new;
 	int			arrlen;
-	long int 	nbr;
+	long int	nbr;
 
 	nbr = n;
 	arrlen = ft_intlen(n);
-	new = malloc((arrlen + 1) * sizeof(char));
+	new = ft_calloc((arrlen + 1), sizeof(char));
 	if (!new)
 		return (NULL);
 	if (nbr < 0)
 		nbr *= -1;
-	new[arrlen] = 0;
 	while (arrlen--)
 	{
 		new[arrlen] = (nbr % 10) + 48;

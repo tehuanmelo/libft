@@ -6,58 +6,55 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 14:11:37 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/22 13:47:06 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:28:37 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Parameters 
+// Parameters
 //     s1: The string to be trimmed.
 //     set: The reference set of characters to trim.
-// Return value 
+// Return value
 //     The trimmed string.
 //     NULL if the allocation fails.
 //     External functs. malloc
-// Description 
+// Description
 //     Allocates (with malloc(3)) and returns a copy of
 //     ’s1’ with the characters specified in ’set’ removed
 //     from the beginning and the end of the string.
 
 #include "libft.h"
 
-int ft_checkstr(char c, char const *set)
+int	ft_checkstr(char c, char const *set)
 {
-    int i;
-
-    i = 0;
-    while (*set)
-    {
-        if(*set++ == c)
-            return (1);
-    }
-    return (0);
+	while (*set)
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    int i;
+	int	i;
 
-    if (!s1)
-        return (NULL);
-    while (*s1)
-    {
-        if (ft_checkstr(*s1, set))
-            s1++; 
-        else 
-            break;  
-    }
-    i = ft_strlen(s1) - 1;
-    while (i)
-    {
-        if (ft_checkstr(s1[i], set))
-            i--;
-        else
-            break;
-    }
-    return (ft_substr(s1, 0, i + 1));
-
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1)
+	{
+		if (ft_checkstr(*s1, set))
+			s1++;
+		else
+			break ;
+	}
+	i = ft_strlen(s1);
+	while (i)
+	{
+		if (ft_checkstr(s1[i - 1], set))
+			i--;
+		else
+			break ;
+	}
+	return (ft_substr(s1, 0, i));
 }
