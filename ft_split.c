@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:20:42 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/25 16:40:34 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:54:52 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,26 +68,24 @@ char	**ft_split(char const *s, char c)
 	int		strwords;
 	int		wlen;
 	int		i;
-	int		j;
 
 	if (!s)
 		return (NULL);
 	strwords = ft_words(s, c);
 	new = ft_calloc(ft_words(s, c) + 1, (sizeof(char *)));
-    if (!new)
+	if (!new)
 		return (NULL);
-	i = -1;
-	while (++i < strwords)
+	i = 0;
+	while (i < strwords)
 	{
 		while (*s == c)
 			s++;
 		wlen = ft_strlensplt(s, c);
-		new[i] = ft_calloc(wlen + 1, (sizeof(char)));
-        if (!new[i])
+		new[i] = ft_substr(s, 0, wlen);
+		if (!new[i])
 			freememory(new);
-		j = 0;
-		while (j < wlen)
-			new[i][j++] = *s++;
+		s += wlen;
+		i++;
 	}
 	return (new);
 }
@@ -95,7 +93,7 @@ char	**ft_split(char const *s, char c)
 // int main(int ac, char **av)
 // {
 //     (void)ac;
-//     char **new = ft_split("\0aa\0bbb", '\0');
+//     char **new = ft_split("  tehuan melo  ", ' ');
 //     while(*new)
 //     {
 //         printf("%s\n", *new);
