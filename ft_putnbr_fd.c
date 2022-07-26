@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 17:31:38 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/26 14:03:59 by tde-melo         ###   ########.fr       */
+/*   Created: 2022/07/26 13:21:02 by tde-melo          #+#    #+#             */
+/*   Updated: 2022/07/26 13:50:56 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// char print(unsigned int x, char *c)
-// {
-//     return (c + x);
-// }
-
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	if (!s)
-		return ;
-	while (*s)
+	if (n == INT_MIN)
 	{
-		i = 0;
-		while (*s)
-		{
-			f(i, s);
-			s++;
-			i++;
-		}
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd('8', fd);
 	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else
+		ft_putchar_fd(n + 48, fd);
 }
-
-// int main()
-// {
-//     printf("%s\n", ft_strmapi("something", print));
-// }
