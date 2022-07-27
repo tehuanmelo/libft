@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:20:42 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/25 16:54:52 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/26 20:01:36 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ char	**ft_split(char const *s, char c)
 //     while(*new)
 //     {
 //         printf("%s\n", *new);
-//         new++;
+//         free(*new++);
 //     }
 //     // printf ("%d\n", ft_words("\0aa\0bbb", '\0'));
-
+//     free(*new);
 //     return (0);
 // }
