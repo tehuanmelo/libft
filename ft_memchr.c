@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:24:48 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/27 13:15:34 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2022/07/27 13:58:40 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (str[i] == (unsigned char)c)
 			return (&str[i]);
-		// str++;
 		i++;
 	}
 	return (NULL);

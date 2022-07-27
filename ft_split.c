@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:20:42 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/26 20:01:36 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2022/07/27 16:24:03 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,17 @@ int	ft_strlensplt(char const *s, char c)
 void	freememory(char **str)
 {
 	char	**new;
+	int		len;
+	int		i;
 
 	new = str;
-	while (*str)
-	{
-		free(*str);
-		str++;
-	}
-	free(new);
+	len = 0;
+	while (*new ++)
+		len++;
+	i = 0;
+	while (i < len)
+		free(str[i++]);
+	free(str);
 }
 
 char	**ft_split(char const *s, char c)
@@ -93,13 +96,19 @@ char	**ft_split(char const *s, char c)
 // int main(int ac, char **av)
 // {
 //     (void)ac;
-//     char **new = ft_split("  tehuan melo  ", ' ');
-//     while(*new)
-//     {
-//         printf("%s\n", *new);
-//         free(*new++);
-//     }
+// 	char *ar = "  tehuan melo  ";
+//     char **new = ft_split(ar, ' ');
+// 	printf("%p\n", new);
+
+// 	freememory(new);
+// 	printf("%p\n", ar);
+
+//     // while(*new)
+//     // {
+//     //     printf("%p\n", *new++);
+//     //     // free(*new++);
+//     // }
 //     // printf ("%d\n", ft_words("\0aa\0bbb", '\0'));
-//     free(*new);
+
 //     return (0);
 // }
