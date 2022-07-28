@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 10:47:46 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/28 11:26:43 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2022/07/28 15:28:31 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ t_list  *ft_lstnew(void *content)
 {
     t_list *n;
 
-    n = ft_calloc(1, sizeof(t_list));
+    n = malloc(sizeof(t_list));
     if (!n)
         return (NULL);
     
     n->content = content;
+    n->next = NULL;
 
     return (n);
 }
