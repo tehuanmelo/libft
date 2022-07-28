@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:20:42 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/27 16:24:03 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:58:10 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	freememory(char **str)
 
 	new = str;
 	len = 0;
-	while (*new ++)
+	while (*new++)
 		len++;
 	i = 0;
 	while (i < len)
