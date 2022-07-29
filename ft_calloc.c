@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 22:17:25 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/28 16:29:57 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/29 08:23:47 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*new;
 
-	if (count > SIZE_MAX / size && size)
+	if (count > SIZE_MAX / size)
 		return (NULL);
 	new = malloc(count * size);
 	if (!new)

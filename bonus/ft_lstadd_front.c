@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 11:32:20 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/28 19:34:46 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/29 10:55:55 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,26 @@
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
-    // if (!lst || !new)
-    //     return;
-    new->next = *lst;
-    *lst = new;
+    if (!(lst || new))
+        return;
+    if (*lst == NULL)
+        *lst = new;
+    else
+    {
+        new->next = *lst;
+        *lst = new;
+    }
+    
 }
 
 // int main()
 // {
     
-//     t_list *new = ft_lstnew("tehuan");
+//     t_list *new = ft_lstnew("world");
 //     t_list *lst = NULL;
     
 //     ft_lstadd_front(&lst, new);
+//     ft_lstadd_back(&lst, ft_lstnew("hello"));
 
-//     printf("%s\n", lst->content);
+//     printf("%s\n", (char*)lst->next->content);
 // }

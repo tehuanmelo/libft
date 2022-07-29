@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 19:21:26 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/07/28 19:42:07 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/07/29 09:38:51 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,11 @@
 
 t_list *ft_lstlast(t_list *lst)
 {
-    t_list *new;
-
-    new = lst;
-
-    while (new)
+    while (lst)
     {
-        if (new->next == NULL)
-            return (new);
-        new = new->next;
+        if (lst->next == NULL)
+            return (lst);
+        lst = lst->next;
     }
     return (lst);
 }
