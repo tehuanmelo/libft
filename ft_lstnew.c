@@ -26,26 +26,23 @@
 
 #include "libft.h"
 
-t_list  *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *n;
+	t_list	*n;
 
-    n = malloc(sizeof(t_list));
-    if (!n)
-        return (NULL);
-    
-    n->content = content;
-    n->next = NULL;
-
-    return (n);
+	n = malloc(sizeof(t_list));
+	if (!n)
+		return (NULL);
+	n->content = content;
+	n->next = NULL;
+	return (n);
 }
 
 // int main()
 // {
 //     char *str = "hello";
 //     t_list *new = ft_lstnew(str);
-    
+
 //         printf("%s\n", (char*)new->next);
-    
 
 // }

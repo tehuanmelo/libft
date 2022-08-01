@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 09:59:06 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2022/07/29 11:01:08 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2022/07/29 15:10:55 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,28 @@
 **     Adds the node ’new’ at the end of the list.
 */
 
-
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-    if (!(lst || new))
-        return;
-    if (*lst == NULL)
-        *lst = new;
-    else
-    {
-        tmp = ft_lstlast(*lst);
-        tmp->next = new;
-    }
-    
+	if (!(lst || new))
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		tmp = ft_lstlast(*lst);
+		tmp->next = new;
+	}
 }
 
 // int main()
 // {
-    
+
 //     t_list *lst = NULL;
-    
+
 //     ft_lstadd_back(&lst, ft_lstnew("world"));
 //     ft_lstadd_front(&lst, ft_lstnew("hello"));
 

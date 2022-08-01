@@ -10,33 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Parameters 
+// Parameters
 //     lst: The beginning of the list.
-// Return value 
+// Return value
 //     The length of the list
-// External functs. 
+// External functs.
 //     None
-// Description 
+// Description
 //     Counts the number of nodes in a list.
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-    int i;
-    t_list *new;
+	int		i;
+	t_list	*new;
 
-    new = lst;
-    i = 0;
-    while(new)
-    {
-        i++;
-        new = new->next;
-    }
-    return (i);
+	new = lst;
+	i = 0;
+	while (new)
+	{
+		i++;
+		new = new->next;
+	}
+	return (i);
 }
-
-
 
 // int main()
 // {
