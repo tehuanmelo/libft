@@ -57,7 +57,7 @@ void	freememory(char **str)
 
 	new = str;
 	len = 0;
-	while (*new++)
+	while (*new ++)
 		len++;
 	i = 0;
 	while (i < len)

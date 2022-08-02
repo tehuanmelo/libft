@@ -13,7 +13,7 @@
 // DESCRIPTION
 //      The ft_strlen() function computes the length of the string s.
 // RETURN VALUES
-//      The ft_strlen() function returns the number of characters that 
+//      The ft_strlen() function returns the number of characters that
 //		precede the terminating NUL character.
 
 #include "libft.h"

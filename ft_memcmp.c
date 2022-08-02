@@ -18,8 +18,8 @@
 //      otherwise returns the difference between the first two differing bytes
 //      (treated as unsigned char values, so that `\200' is greater than `\0',
 //		for
-//      example).  Zero-length strings are always identical.  
-//      This behavior is not required by C and portable code should only 
+//      example).  Zero-length strings are always identical.
+//      This behavior is not required by C and portable code should only
 //      depend on the sign of the returned value.
 
 #include "libft.h"

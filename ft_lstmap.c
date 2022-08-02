@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 17:02:55 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/08/01 20:04:45 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/08/02 14:01:56 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,23 @@
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst)//, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*tmp;
 	t_list	*head;
 
-	if (!(lst))// || f || del))
+	if (!(lst))
 		return (NULL);
-	head = ft_lstnew(lst->content);
+	head = ft_lstnew(f(lst->content));
 	tmp = head;
 	lst = lst->next;
 	while (lst)
 	{
-		tmp->next = ft_lstnew(lst->content);
+		tmp->next = ft_lstnew(f(lst->content));
+		if (!(tmp->next))
+			ft_lstclear(&head, del);
 		tmp = tmp->next;
 		lst = lst->next;
 	}
 	return (head);
-}
-
-int main()
-{
-    t_list *lst = ft_lstnew("hello");
-    ft_lstadd_back(&lst, ft_lstnew("world"));
-    t_list *new = ft_lstmap(lst);
-
-    while(new)
-    {
-        printf("%s", new->content);
-        new = new->next;
-    }
-
 }

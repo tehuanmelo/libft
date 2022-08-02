@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:18:59 by tde-melo          #+#    #+#             */
-/*   Updated: 2022/08/01 20:05:05 by tde-melo         ###   ########.fr       */
+/*   Updated: 2022/08/02 14:05:11 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <unistd.h>
 # include <string.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -74,10 +74,11 @@ t_list				*ft_lstlast(t_list *lst);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstadd_back(t_list **lst, t_list *new);
-void 				ft_lstdelone(t_list *lst, void (*del)(void*));
-void 				ft_lstclear(t_list **lst, void (*del)(void*));
-void 				ft_lstiter(t_list *lst, void (*f)(void *));
-// t_list 				*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *));
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
 
 /*** My implementation ***/
 
