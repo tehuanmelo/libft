@@ -41,6 +41,7 @@ ft_strlcpy.c\
 ft_strlen.c\
 ft_strmapi.c\
 ft_strncmp.c\
+ft_strcmp.c\
 ft_strnstr.c\
 ft_strrchr.c\
 ft_strtrim.c\
@@ -50,8 +51,7 @@ ft_toupper.c
 vpath %.c src
 OBJPATH = obj/
 SRCPATH = src/
-SRC = $(addprefix $(SRCPATH), $(SRCFILES))
-OBJ = $(patsubst $(SRCPATH)%.c, $(OBJPATH)%.o, $(SRC))
+OBJ = $(patsubst %.c, $(OBJPATH)%.o, $(SRCFILES))
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
