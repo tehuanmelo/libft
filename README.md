@@ -4,7 +4,7 @@ The libft project is a project assigned to students of the 42 school, which aims
 
 The students are required to re-create a number of basic C library functions such as:
 
-* Memory allocation and management: malloc, free, realloc
+* Memory allocation and management: malloc, free
 * Strings: strlen, strcpy, strcat, strdup, strchr, strstr
 * Numbers: atoi, itoa, etc.
 The students must also implement additional functions that will be useful for future projects. These functions will be used throughout the 42 curriculum.
